@@ -1,0 +1,192 @@
+<div ng-controller="findController">
+    <!--search-->
+    <div class="weui-search-bar" id="find_searchBar">
+        <form class="weui-search-bar__form">
+            <div class="weui-search-bar__box">
+                <i class="weui-icon-search"></i>
+                <input ng-focus="search_panel()" type="search" class="weui-search-bar__input"
+                       id="find_searchInput" placeholder="搜索"
+                       required=""/>
+                <a href="javascript:" class="weui-icon-clear"
+                   id="find_searchClear"></a>
+            </div>
+            <label class="weui-search-bar__label"
+                   id="find_searchText">
+                <i class="weui-icon-search"></i>
+                <span>请输入书名、作者</span>
+            </label>
+        </form>
+        <a href="javascript:" class="weui-search-bar__cancel-btn"
+           id="find_searchCancel" ng-click="find_searchCancel()">取消</a>
+    </div>
+    <div class="find_oye" ng-hide="find_oye">
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img
+                    src="../../static/img/find_swiper_01.jpg"/></div>
+            <div class="swiper-slide"><img
+                    src="../../static/img/find_swiper_02.jpg"/></div>
+            <div class="swiper-slide"><img
+                    src="../../static/img/find_swiper_03.jpg"/></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="../../static/weui/js/swiper.min.js"></script>
+    <script>
+        /*swiper*/
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true,
+            centeredSlides: true,
+            autoplay: 2500,
+            observer: true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents: true,//修改swiper的父元素时，自动初始化swiper
+            autoplayDisableOnInteraction: false
+        });
+    </script>
+
+    <!--bookType-->
+    <div class="weui-grids grids-small find_bookType">
+        <a href="typebook.html" class="grid"
+           ng-repeat="bookType in bookTypes">
+            <div class="weui-grid__icon"><img
+                    ng-src="{{bookType.img}}"/></div>
+            <p class="weui-grid__label">{{bookType.type}}</p>
+        </a>
+        <a href="morebookType.html" class="grid" ng-click="jumpToMKT()">
+            <div class="weui-grid__icon"><img
+                    src="../../static/img/find_bookIcon_more.png"/></div>
+            <p class="weui-grid__label">更多</p>
+        </a>
+    </div>
+
+    <!--hotArticle-->
+    <div class="find_hotArticle">
+        <div class="weui_cells weui_cells_access"
+             ng-repeat="hotArticle in hotArticles">
+            <a class="weui_cell "
+               href="bookDetails.html">
+                <div class="weui-grid__icon"><img
+                        ng-src="{{hotArticle.img}}"/></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>#{{hotArticle.title}}#</p>
+                </div>
+            </a>
+        </div>
+        <div class="weui_cells weui_cells_access">
+            <a class="weui_cell " href="morehotbook.html" ng-click="jumpToMHA()">
+                <div class="weui-grid__icon"><img
+                        src="../../static/img/find_bookIcon_hot.png"/>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary"><p>
+                    #热门书刊#</p></div>
+            </a>
+        </div>
+    </div>
+
+    <!--book Sort-->
+    <div class="weui-tab find_weui_tab" >
+        <div class="weui-navbar" ng-init='activeTab=1'>
+            <a ui-sref="index.find.newbook" class="weui_navbar_item active"
+               ng-class='{active:activeTab==1}'
+               ng-click='activeTab=1'>
+                最新
+            </a>
+            <a ui-sref="index.find.classicbook" class="weui_navbar_item"
+               ng-class='{active:activeTab==2}'
+               ng-click='activeTab=2'>
+                经典
+            </a>
+            <a ui-sref="index.find.listbook" class="weui_navbar_item"
+               ng-class='{active:activeTab==3}'
+               ng-click='activeTab=3'>
+                榜单
+            </a>
+        </div>
+        <div class="weui-tab__bd">
+            <div class="find_hot_book" ng-show='activeTab==1'>
+                <div class="weui-panel weui-panel_access">
+                    <div class="weui-panel__hd">最新书籍</div>
+                    <div class="weui-panel__bd">
+                        <a href="bookDetails.html" class="weui-media-box weui-media-box_appmsg" ng-repeat="hotArticle in hotArticles">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" ng-src="{{hotArticle.img}}"/>
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h3 class="book_title">{{hotArticle.title}}</h3>
+                                <p class="book_author">作者：{{hotArticle.author}} </p>
+                                <p class="book_publisher">出版社：{{hotArticle.publisher}} </p>
+                                <p class="book_pubdate">出版年：{{hotArticle.pubdate|date:'yyyy年M月'}} </p>
+                                <p class="book_price">定价:{{hotArticle.price|currency:'￥'}} </p>
+                                <!--star star-->
+                                <p class="book_star_mark">豆瓣评分：
+                                <div class="starstar" star="" rating-value='hotArticle.star_mark' max="max" readonly="{{readonly}}"></div>
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#/hotArticle/{{hotArticle.id}}" class="weui-media-box weui-media-box_appmsg" ng-repeat="hotArticle in hotArticles">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" ng-src="{{hotArticle.img}}"/>
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h3 class="book_title">{{hotArticle.title}}</h3>
+                                <p class="book_author">作者：{{hotArticle.author}} </p>
+                                <p class="book_publisher">出版社：{{hotArticle.publisher}} </p>
+                                <p class="book_pubdate">出版年：{{hotArticle.pubdate|date:'yyyy年M月'}} </p>
+                                <p class="book_price">定价:{{hotArticle.price|currency:'￥'}} </p>
+                                <!--star star-->
+                                <p class="book_star_mark">豆瓣评分：
+                                <div class="starstar" star="" rating-value='hotArticle.star_mark' max="max" readonly="{{readonly}}"></div>
+                                </p>
+                            </div>
+                        </a>
+                        <!--The rolling load-->
+                        <div class="weui-loadmore">
+                            <i class="weui-loading"></i>
+                            <span class="weui-loadmore__tips">正在加载</span>
+                        </div>
+                    </div>
+                    <!--footer-->
+                    <div class="weui-footer">
+                        <p class="weui-footer__links">
+                            <a href="#/main" class="weui-footer__link">@书掌柜</a>
+                        </p>
+                        <p class="weui-footer__text">Copyright ©
+                            2017-2020 Alien</p>
+                    </div>
+
+                    <!-- <script>
+                         var loading = false;  //状态标记
+                          $(document.body).infinite().on("infinite", function() {
+                          if(loading) return;
+                          loading = true;
+                          var dom='';
+                          setTimeout(function() {
+                          dom+='<a href="#/hotArticle/hotArticle.id" class="weui-media-box weui-media-box_appmsg">' +
+                          '<div class="weui-media-box__hd">' +
+                          '<img class="weui-media-box__thumb" ng-src="{{hotArticle.img}}"/>' +
+                          '</div>' +
+                          '<div class="weui-media-box__bd">' +
+                          '<h4 class="weui-media-box__title">{{hotArticle.name}}</h4>' +
+                          '<p class="weui-media-box__desc">{{hotArticle.desc}}</p>' +
+                          '</div>' +
+                          '</a>'
+                          $(".weui-panel__bd").append(dom);
+                          loading = false;
+                          }, 1500);   //模拟延迟
+                          });
+                     </script>-->
+
+
+                </div>
+            </div>
+            <div ui-view=""></div>
+        </div>
+    </div>
+    </div>
+</div>
+

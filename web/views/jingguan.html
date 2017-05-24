@@ -1,0 +1,18 @@
+<div ng-if='activeTab==2'>
+    <a href="../bookDetails.html" ng-repeat="hotArticle in hotArticles">
+        <div class="home_book">
+            <div class="content">
+                <div class="home_book_info">
+                    <span class="home_book_titile">{{hotArticle.title}}</span>
+                    <div class="home_book__info">{{hotArticle.desc}}</div>
+                    <span class="home_book_look">
+                                    阅读：{{hotArticle.look_count}} · 可借复本：{{hotArticle.kejiefuben}}
+                                </span>
+                </div>
+                <div class="home_book_img">
+                    <img src="{{hotArticle.img}}"/>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

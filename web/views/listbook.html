@@ -1,0 +1,54 @@
+<div class="find_list_book" ng-show='activeTab==3'>
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__hd">榜单</div>
+        <div class="weui-panel__bd">
+            <a href="#/ListArticle/{{ListArticle.id}}" class="weui-media-box weui-media-box_appmsg" ng-repeat="ListArticle in ListArticles">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" ng-src="{{ListArticle.img}}"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h3 class="book_title">{{ListArticle.title}}</h3>
+                    <p class="book_author">作者：{{ListArticle.author}} </p>
+                    <p class="book_publisher">出版社：{{ListArticle.publisher}} </p>
+                    <p class="book_pubdate">出版年：{{ListArticle.pubdate|date:'yyyy年M月'}} </p>
+                    <p class="book_price">定价:{{ListArticle.price|currency:'￥'}} </p>
+                    <!--star star-->
+                    <p class="book_star_mark">豆瓣评分：
+                    <div class="starstar" star="" rating-value='ListArticle.star_mark' max="max" readonly="{{readonly}}"></div>
+                    </p>
+                </div>
+            </a>
+            <a href="#/ListArticle/{{ListArticle.id}}" class="weui-media-box weui-media-box_appmsg" ng-repeat="ListArticle in ListArticles">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" ng-src="{{ListArticle.img}}"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h3 class="book_title">{{ListArticle.title}}</h3>
+                    <p class="book_author">作者：{{ListArticle.author}} </p>
+                    <p class="book_publisher">出版社：{{ListArticle.publisher}} </p>
+                    <p class="book_pubdate">出版年：{{ListArticle.pubdate|date:'yyyy年M月'}} </p>
+                    <p class="book_price">定价:{{ListArticle.price|currency:'￥'}} </p>
+                    <!--star star-->
+                    <p class="book_star_mark">豆瓣评分：
+                    <div class="starstar" star="" rating-value='ListArticle.star_mark' max="max" readonly="{{readonly}}"></div>
+                    </p>
+                </div>
+            </a>
+            <!--footer-->
+            <div class="weui-footer">
+                <p class="weui-footer__links">
+                    <a href="#/main" class="weui-footer__link">@书掌柜</a>
+                </p>
+                <p class="weui-footer__text">Copyright ©
+                    2017-2020 Alien</p>
+            </div>
+        </div>
+        <div class="weui-panel__ft">
+            <a href="javascript:void(0);"
+               class="weui-cell weui-cell_access weui-cell_link">
+                <div class="weui-cell__bd">查看更多</div>
+                <span class="weui-cell__ft"></span>
+            </a>
+        </div>
+    </div>
+</div>

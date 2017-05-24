@@ -1,0 +1,282 @@
+html,body{width:100%;height:auto;margin:0 auto;font-family:'微软雅黑';}
+/*index*/
+.indexnavbar{position: fixed;}
+.weui-tab>.weui-tab__bd>.weui-tab__bd-item{background: #eeeeee;height:auto;}
+.indexnavbar>.weui-tabbar__item>.weui-tabbar__icon{width:50px;height:30px;}
+.indexnavbar>.weui-tabbar__item>.home{margin:0 0 0 3px;}
+.indexnavbar>.weui-tabbar__item>.search{margin:0 0 0 0px;}
+.indexnavbar>.weui-tabbar__item>.wode{margin:0 0 0 2px;}
+
+/*导航栏菜单高亮*/
+.active>.weui-tabbar__icon>.demo-icon{color:#007aff;}
+.active>.weui-tabbar__label{color:#007aff;}
+
+/*个人中心-未登录*/
+.personal_unLogin_panel{
+    background: #007aff;
+}
+/*发现*/
+#find_searchBar{position: fixed;z-index:9999;width: 100%;display: flex;}
+.swiper-container {width: 100%;height: 120px;position: absolute;top:45px;}
+.swiper-container>.swiper-wrapper{width:100%;height:120px;}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-container>.swiper-wrapper>.swiper-slide>img{width:100%;height:100%;display: flex;}
+.swiper-container>.swiper-pagination{margin:0 0 0 147px;}
+.grid{background: white;}
+.grid:hover{background: #EEEEEE;}
+.find_bookType{width:100%; position: absolute;top:166px;}
+.find_hotArticle{width: 100%;position: absolute;top:337px;}
+.find_hotArticle>.weui_cells{float:left; width:49.6%;margin:0px 0 0 0;}
+.find_hotArticle>.weui_cells:nth-child(odd){border-right: 1px solid #cccccc;}
+.find_hotArticle>.weui_cells>.weui_cell{width:94%;height:24px;padding: 5px 0 0 33px;}
+.find_hotArticle>.weui_cells>.weui_cell>.weui-grid__icon>img{border-radius: 5px;width: 80%;height: 80%;}
+.find_hotArticle>.weui_cells>.weui_cell>.weui_cell_bd>p{font-size: 12px;}
+.weui-media-box_appmsg .weui-media-box__hd {
+    margin-right: .8em;
+    width: 100px;
+    height: 140px;
+    line-height: 60px;
+    text-align: center;
+}
+.starstar{width:50%;margin:-27px 0 0 65px;}
+
+
+.find_weui_tab{width:100%;height:auto;position: absolute;top:397px;}
+.find_weui_tab>.weui-navbar{width:100%;height:44px;}
+.find_weui_tab>.weui-navbar>.weui-navbar__item{font-family:'微软雅黑';font-weight:600;}
+.find_weui_tab>.weui-navbar>.active{border-bottom:3px solid red;color: #db1919;font-weight:600;font-family:'微软雅黑';}
+.find_weui_tab>.weui-tab__bd{height:auto;width:100%;margin-top:-6px;}
+
+
+/*更多书刊类型*/
+.weui-header_book_type{position:fixed;top:0;width:100%;height:40px;z-index: 99;background:#F2F2F2;}
+.weui-header_book_type>.weui-header-left{width:15px;float: left;margin:11px 0 0 22px;}
+.weui-header_book_type>.weui-header-left>img{width:15px;height:15px;}
+.weui-header_book_type>.weui-header-left>img:hover{background:#CCCCCC;}
+.weui-header_book_type>.weui-header-search{margin:5px 0 0 50px;width:82%;height:80%;}
+.weui-header_book_type>.weui-header-search>input{margin:0 0 0 0;border-style: none;width:100%;height:80%;}
+.book_type_panel{width:100%;margin-top:5px;}
+.book_type_panel>.weui-form-preview-hd>.weui-form-preview-label{text-align-last: left;display: flex;}
+.book_type_panel>.weui-form-preview-hd>span{width:100%;}
+.book_type_panel>.weui-form-preview-bd>.weui_grids>.grid{width:20%;padding:0 0 0 0;display: flex;flex-direction: column;}
+.book_type_panel>.weui-form-preview-bd>.weui_grids>a>.weui-grid__icon{width:50px;height:50px;}
+.book_type_panel>.weui-form-preview-bd>.weui_grids>a>.weui-grid__icon>img{width:70%;height:70%;margin:10px -1px 0 0;}
+.book_type_panel>.weui-form-preview-bd>.weui_grids>a>p{text-align:center;}
+
+
+
+
+/*更多热门书刊*/
+.more_hot_book_top,.book_details_top{background:#999999}
+.more_hot_book_top>.weui-header-left
+.book_details_top>.weui-header-left{cursor: pointer;}
+.more_hot_book_content{width:100%;height:40%;padding: 0 0 13px 0px;}
+.more_hot_book_content>.weui_panel_hd{width:100%;height:25px;}
+.more_hot_book_content>.weui_panel_hd>h4{width:50%;float:left;}
+.more_hot_book_content>.weui_panel_hd>.hot_book_order{float: right;margin: -1px 30px 0 0px;}
+.more_hot_book_content>.weui_panel_bd{width:100%;height:60%;display: flex;flex-direction:row-reverse;margin-bottom:20px;}
+.more_hot_book_content>.weui_panel_bd>.weui-media-box__bd>h5{font-weight: normal;}
+.more_hot_book_content>.weui_panel_bd>.weui-media-box__bd{width:62%;float:left;padding:12px 13px 0px 12px;margin: 0px 0px 0px 0px;}
+.more_hot_book_content>.weui_panel_bd>.weui-media-box__hd{margin-top:10px;width:34%;height:110%; float: right;}
+.more_hot_book_content>.weui_panel_bd>.weui-media-box__hd>img{border-radius: 5px;width: 80%;height: 80%;box-shadow: 10px 10px 5px #888888;}
+.more_hot_book_content>.weui_panel_ft{margin:0px 0px 0px 0px;}
+.book_type_panel_new{margin-top:40px;}
+.more_book_search_content_panel{margin:35px 0 0 0;}
+
+
+/*星星*/
+.rating {color: #a9a9a9;margin: 0; padding: 0;}
+ul.rating {display: inline-block;}
+.rating li {list-style-type: none;display: inline-block;padding: 1px;text-align: center;font-weight: bold;  cursor: pointer;}
+.rating .filled {color: #ffee33;}
+
+
+
+/*书籍详情*/
+.book_details_menu>.container{padding:0;clear:both;}
+.book_details_menu>.container>.book_details_collection{width:40%; cursor:pointer; height:50px;line-height:50px;text-align:center;margin:0;border:none;background:#265a88;color:#fff;float:left;}
+.book_details_menu>.container>.book_details_onlineOrder{width:60%;cursor:pointer;height:50px;line-height:50px;text-align:center;margin:0;border:none;background:#ed9e2d;color:#fff;float:right;}
+.book_details_Info{display: flex;flex-direction: column;margin-bottom: 50px;}
+.book_details>.book_details_img{display: flex;flex-direction: column;width:42%;margin-left:25%;box-shadow:0px 65px 200px #888888;}
+.book_details>.book_details_img>img{box-shadow:10px 65px 500px #888888;}
+.book_details_Info>.book_details>.book_details_section1{width:100%;height:60%;display: flex;flex-direction: row;margin:12px 0 0 0px;border-radius: 8px;}
+.book_details_Info>.book_details>.book_details_section1>.weui-form-preview-bd{width:100%;height:100%;}
+.book_details_Info>.book_details>.book_details_section1>.weui-form-preview-bd>.book_details_title{display: flex;flex-direction: row;width:52%;}
+.book_details_Info>.book_details>.book_details_section1>.weui-form-preview-bd>.book_details_title>.book_title{float: left;font-size: 18px;font-weight: 400;}
+.book_details_Info>.book_details>.book_details_section1>.weui-form-preview-bd>.book_details_price{display: flex;flex-direction: row;width:52%;}
+.book_details_Info>.book_details>.book_details_section1>.weui-form-preview-bd>.book_details_price>.book_price{float: left;margin:0% 0 0 10%;font-size: 24px;color:red;}
+.book_details_order{display: flex;flex-direction: row;width:100%;}
+.book_details_allInfo{width:100%;}
+.book_details_allInfo>.weui-form-preview-value{display: flex;flex-direction: row;width:50%;float: left;font-size: 8px;word-wrap:break-word;}
+.book_details_star{float: right;width:28%;height:38%;margin:-80px 28px 0px 0px;}
+.book_details_star>.book_star_mark{float: right;}
+.book_details_star>.starstar{width: 100%;margin:0 0 0 9px;}
+.book_details_section2,.book_details_section3{margin-top:30px;}
+.book_details_section2>p,.book_details_section3>p{font-size: 10px;}
+.book_details_section4{width:100%;}
+.book_details_section4>div{height:20px;}
+.book_details_section4>div>h3{float: left;}
+.book_details_section4>div>p{float:right;margin:0 0 0 0 ;}
+.bookSectionUp{transition: all linear 0.5s;height: 0px;}
+.bookSectionDown{transition: all linear 0.5s;height: 100px;}
+
+
+/*主页*/
+.main_book_top{width:100%;}
+.main_book_top>#main_searchBar{z-index: 999;width:100%;position: fixed;top:0px;display: none;}
+.back_top{width:50px;height:50px;position: fixed;bottom: 100px;right:40px;display: none;z-index:99;}
+.home_container{width:100%;}
+.home_container>.home_tab_panel{width: 100%;height:1000px;}
+.home_recommend_book{margin-top:7px;height:251px; overflow: hidden;}
+.home_recommend_book>.weui-form-preview-hd{width:90%;margin:-40px 0 0 5px;}
+.home_recommend_book>.weui-form-preview-bd{width:100%;font-size: 12px;}
+.home_recommend_book>ul>li{width:100%;}
+.home_recommend_book>ul>li>.weui-form-preview-bd{width:90%;height:100px;display: flex;flex-direction: inherit;}
+.home_recommend_book>ul>li>.weui-form-preview-bd>.home_recommend_img{float: left;width:58%;height:100%;margin: 0 0 0 -87px;}
+.home_recommend_book>ul>li>.weui-form-preview-bd>.home_recommend_img>img{width:40%;height:100%;}
+.home_recommend_book>ul>li>.weui-form-preview-bd>.home_recommend_info{width:100%;height:100px;}
+.home_recommend_book>ul>li>.weui-form-preview-bd>.home_recommend_info>.weui-form-preview-label{margin:8px 0 0 15px;}
+.home_recommend_book>ul>li>.weui-form-preview-bd>.home_recommend_info>.weui-form-preview-value{width:100%;height:63%;margin-left:12px;overflow: hidden;text-overflow: ellipsis;}
+
+.home_book {
+    width:94%;
+    position: relative;
+    margin: 10px 0px 0px 0px;
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.16);
+}
+.home_book:before,
+.home_book:after {
+    content: "";
+    position: absolute;
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    bottom: 15px;
+    box-shadow: 0 15px 5px rgba(0, 0, 0, 0.3);
+    height: 20px;
+    left: 3px;
+    max-width: 300px;
+    width: 40%;
+}
+.home_book:after {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+    left: auto;
+    right: 3px;
+}
+.home_book .content {
+    position: relative;
+    color: #000000;
+    z-index: 2;
+    font-size: 13px;
+    text-align: left;
+    background: #fff;
+    padding: 10px;
+    height:123px;
+    width:100%;
+}
+.home_book>.content>.home_book_info{z-index: 2;width:62%;height:84%;float: left;margin: 10px 8px 10px 8px; }
+.home_book>.content>.home_book_img{z-index: 2;width:30%;height:84%;float: right;margin: 10px 8px 10px 0px;}
+.home_book>.content>.home_book_img>img{z-index: 2;width:70%;height:100%;}
+.home_book>.content>.home_book_info>.home_book__info{width:100%;height:66px;overflow: hidden;text-overflow: ellipsis;}
+
+
+
+
+/*
+.main {
+    background:#00D0BC;
+    color:#FFFFFF;
+}
+.find{
+    background:#E59400;
+    color:#FFFFFF;
+}
+@keyframes rotateFall {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+        animation-timing-function: ease-out;
+    }
+    40% {
+        transform: rotateZ(17deg);
+    }
+    60% {
+        transform: rotateZ(16deg);
+    }
+    100% {
+        transform: translateY(100%) rotateZ(17deg);
+    }
+}
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes rotateOutNewspaper {
+    to {
+        transform: translateZ(-3000px) rotateZ(360deg);
+        opacity: 0;
+    }
+}
+@keyframes scaleUp {
+    from {
+        opacity: 0.3;
+        -webkit-transform: scale(0.8);
+    }
+}
+@keyframes slideInRight {
+    from {
+        transform:translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInUp {
+    from {
+        transform:translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.ng-enter {
+    z-index: 8888;
+}
+.ng-leave {
+    z-index: 9999;
+}
+.main.ng-enter {
+    animation: scaleUp 0.5s both ease-in;
+}
+.main.ng-leave {
+    transform-origin: 0% 0%;
+    animation: rotateFall 1s both ease-in;
+}
+.find.ng-enter {
+    animation:slideInRight 0.5s both ease-in;
+}
+.find.ng-leave {
+    animation:slideOutLeft 0.5s both ease-in;
+}
+
+*/

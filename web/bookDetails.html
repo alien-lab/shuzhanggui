@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="bookDetails">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/index.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui2.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui3.css"/>
+
+    <script src="../static/angularjs/angular.min.js"></script>
+    <script src="../static/angularjs/angular-animate.min.js"></script>
+    <script src="./bookDetailsController.js"></script>
+    <title>图书详情</title>
+</head>
+
+<body ontouchstart="" ng-controller="bookDetailsController">
+<!--menu-->
+<nav class="navbar navbar-default tab-bottom book_details_menu">
+    <div class="container">
+        <div class="book_details_collection" type="button" ng-click="goList()"><span class="glyphicon glyphicon-heart"></span>收藏</div>
+        <div type="button" class="book_details_onlineOrder">
+            <span class="glyphicon glyphicon-yen"></span>立即订阅</div>
+    </div>
+</nav>
+<!--end-->
+
+<div>
+<!--head-->
+<div class="weui-header book_details_top">
+    <div class="weui-header-left" ng-click="book_details_back()">
+        <a class="icon icon-109 f-white">返回</a>
+    </div>
+    <h1 class="weui-header-title">{{bookdetail.title}}</h1>
+    <div class="weui-header-right">
+        <a class="icon icon-22 f-white"></a>
+    </div>
+</div>
+<!--end-->
+
+<!--content-->
+<div class="weui_article book_details_Info" >
+    <section class="book_details">
+        <!--section>>>0 -->
+        <p class="book_details_img">
+            <img ng-src="{{bookdetail.img}}"/>
+        </p>
+        <!--section>>>1 -->
+        <div class="weui-form-preview book_details_section1">
+
+            <div class="weui-form-preview-bd" >
+                <div class="book_details_title">
+                    <h3 class="book_title">{{bookdetail.title}}</h3>
+                </div>
+                <div class="book_details_price">
+                    <p class="book_price">{{bookdetail.price|currency:'￥'}}</p>
+                </div>
+                <!--star star-->
+                <div class="book_details_star">
+                    <div class="book_star_mark">豆瓣评分：</div>
+                    <div class="starstar" star="" rating-value='bookdetail.star_mark' max="max" readonly="{{readonly}}"></div>
+                </div>
+                <div class="book_details_order">
+                    <label class="weui-form-preview-label">已借出：{{bookdetail.total_count - bookdetail.lend_count}}</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="weui-form-preview-label">借阅人次：{{bookdetail.read_count}}</label>
+                </div>
+                <div class="book_details_allInfo">
+                    <span class="weui-form-preview-value">作者：{{bookdetail.author}}</span>
+                    <span class="weui-form-preview-value">出版社：{{bookdetail.publisher}}</span>
+                    <span class="weui-form-preview-value">原作名：</span>
+                    <span class="weui-form-preview-value">译者：{{bookdetail.translator}}</span>
+                    <span class="weui-form-preview-value">出版时间：{{bookdetail.pubdate|date:'yyyy年M月'}}</span>
+                    <span class="weui-form-preview-value">页数：{{bookdetail.pages}}</span>
+                    <span class="weui-form-preview-value">装帧：{{bookdetail.binding}}</span>
+                    <span class="weui-form-preview-value">丛书：</span>
+                    <span class="weui-form-preview-value">ISBN：{{bookdetail.isbn13}}</span>
+                    <span class="weui-form-preview-value">图书馆：{{bookdetail.library_name}}</span>
+                    <span class="weui-form-preview-value">索书号：{{bookdetail.book_position}}</span>
+                </div>
+            </div>
+        </div>
+        <!--section>>>2 -->
+        <section class="book_details_section2">
+            <h3>【内容简介】</h3>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{bookdetail.desc}}</p>
+        </section>
+        <hr/>
+        <section class="book_details_section3">
+            <h3>【作者简介】</h3>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{bookdetail.authorinfo}}</p>
+            <p><img src="../static/img/book_default.jpg"/></p>
+        </section>
+        <section class="book_details_section4">
+            <div>
+                <h3>【目录】</h3>
+                <p ng-click="book_hide()" ng-model="mulu_hide_val">{{hideORshow}}</p>
+            </div>
+            <p  ng-hide="mulu_hide_val">
+                第一章
+                第二章
+                第三章
+                第四章
+                第五章
+                第六章
+                第七章
+                第八章
+                第九章
+                第十章
+                第十一章
+                第十二章
+                第十三章
+                第十四章
+                第十五章
+                第十六章
+                第十七章
+                第十八章
+                第十九章
+                第二十章
+                第二十一章
+                第二十二章
+                第二十三章
+                第二十四章
+                第二十五章
+                译后记
+                · · · · · ·
+            </p>
+        </section>
+    </section>
+    <hr/>
+    <!--footer-->
+    <div class="weui-footer">
+        <p class="weui-footer__links">
+            <a href="#/main" class="weui-footer__link">@书掌柜</a>
+        </p>
+        <p class="weui-footer__text">Copyright ©
+            2017-2020 Alien</p>
+    </div>
+    <!--end-->
+</div>
+
+
+</div>
+</body>
+</html>

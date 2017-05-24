@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="typebook">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/index.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui2.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui3.css"/>
+
+    <script src="../static/angularjs/angular.min.js"></script>
+    <script src="./typebookController.js"></script>
+    <!--<script src="../static/js/starstar.js"></script>-->
+    <title>书刊</title>
+</head>
+<body ontouchstart="" ng-controller="typebookController">
+<!--head-->
+<div class="weui-header more_hot_book_top">
+    <div class="weui-header-left" ng-click="type_book_back()">
+        <a class="icon icon-109 f-white">返回</a>
+    </div>
+    <h1 class="weui-header-title">现代书刊</h1>
+    <div class="weui-header-right">
+        <a class="icon icon-22 f-white"></a>
+    </div>
+</div>
+<!--end-->
+
+<!--content-->
+<div class="weui_panel weui_panel_access more_hot_book_content" ng-repeat="typebook in typebooks">
+    <div class="weui_panel_hd">
+        <h4>{{typebook.title}}</h4>
+        <a href="javascript:;" class="weui_btn weui_btn_mini bg-orange hot_book_order">在线订阅</a>
+    </div>
+
+    <div class="weui_panel_bd">
+        <div class="weui-media-box__hd">
+            <img class="weui-media-box__thumb" ng-src="{{typebook.img}}"/>
+        </div>
+        <div class="weui-media-box__bd">
+            <h5><p class="book_author">作者：{{typebook.author}} </p></h5>
+            <p class="book_publisher">出版社：{{typebook.publisher}} </p>
+            <p class="book_pubdate">出版年：{{typebook.pubdate|date:'yyyy年M月'}} </p>
+            <p class="book_price">定价:{{typebook.price|currency:'￥'}} </p>
+            <!--star star-->
+            <p class="book_star_mark">豆瓣评分：
+            <div class="starstar" star="" rating-value='typebook.star_mark' max="max" readonly="{{readonly}}"></div>
+            </p>
+        </div>
+    </div>
+    <a href="bookDetails.html" class="weui_panel_ft">查看详情</a>
+</div>
+<div class="weui_panel weui_panel_access more_hot_book_content" ng-repeat="typebook in typebooks">
+    <div class="weui_panel_hd">
+        <h4>{{typebook.title}}</h4>
+        <a href="javascript:;" class="weui_btn weui_btn_mini bg-orange hot_book_order">在线订阅</a>
+    </div>
+
+    <div class="weui_panel_bd">
+        <div class="weui-media-box__hd">
+            <img class="weui-media-box__thumb" ng-src="{{typebook.img}}"/>
+        </div>
+        <div class="weui-media-box__bd">
+            <h5><p class="book_author">作者：{{typebook.author}} </p></h5>
+            <p class="book_publisher">出版社：{{typebook.publisher}} </p>
+            <p class="book_pubdate">出版年：{{typebook.pubdate|date:'yyyy年M月'}} </p>
+            <p class="book_price">定价:{{typebook.price|currency:'￥'}} </p>
+            <!--star star-->
+            <p class="book_star_mark">豆瓣评分：
+            <div class="starstar" star="" rating-value='hotArticle.star_mark' max="max" readonly="{{readonly}}"></div>
+            </p>
+        </div>
+    </div>
+    <a href="bookDetails.html" class="weui_panel_ft">查看详情</a>
+</div>
+<!--end-->
+
+<!--The rolling load-->
+<div class="weui-loadmore">
+    <i class="weui-loading"></i>
+    <span class="weui-loadmore__tips">正在加载</span>
+</div>
+<!--end-->
+
+<!--footer-->
+<div class="weui-footer">
+    <p class="weui-footer__links">
+        <a href="#/main" class="weui-footer__link">@书掌柜</a>
+    </p>
+    <p class="weui-footer__text">Copyright ©
+        2017-2020 Alien</p>
+</div>
+<!--end-->
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="morebooktype">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/index.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui2.css"/>
+    <link rel="stylesheet" href="../static/weui/css/weui3.css"/>
+
+    <script src="../static/angularjs/angular.min.js"></script>
+    <script src="./morebooktypeController.js"></script>
+
+    <title>更多书籍类型</title>
+</head>
+<body ng-controller="morebooktypeController">
+<!--head-->
+<div class="weui-header_book_type" >
+    <div class="weui-header-left" ng-click="book_type_back()">
+        <img src="../static/img/booktype_back.png"/>
+    </div>
+    <div class="weui-header-search">
+        <!--<img src="../static/img/book_search.png"/>-->
+        <input type="text" ng-model="book_typeContent" ng-focus="book_type_search_focus()" ng-blur="book_type_search_blur()" placeholder="书刊类型">
+    </div>
+
+</div>
+<!--end-->
+<div class="more_book_type_content" ng-hide="more_book_type_content">
+    <div class="weui-form-preview book_type_panel more_book_search_content_panel">
+        <div class="weui-form-preview-hd">
+            <label class="weui-form-preview-label">您搜索的内容</label>
+            <span class="weui-form-preview-value"></span>
+        </div>
+        <div class="weui-form-preview-bd">
+            <div class="weui_grids grids-small"  >
+                <a href="moretypebook.html" class="grid"
+                   ng-repeat="bookType in bookTypes | filter:book_typeContent | orderBy:'type'">
+                    <div class="weui-grid__icon">
+                        <img ng-src="{{bookType.img}}"/>
+                    </div>
+                    <p class="weui-grid__label">{{bookType.type}}</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="more_book_type_oye" ng-hide="more_book_type_oye">
+<!--content-->
+<div class="weui-form-preview book_type_panel book_type_panel_new">
+    <div class="weui-form-preview-hd">
+        <label class="weui-form-preview-label">最近</label>
+        <span class="weui-form-preview-value"></span>
+    </div>
+    <div class="weui-form-preview-bd">
+        <div class="weui_grids grids-small"  >
+            <a href="moretypebook.html" class="grid"
+               ng-repeat="bookType in bookTypes">
+                <div class="weui-grid__icon">
+                    <img ng-src="{{bookType.img}}"/>
+                </div>
+                <p class="weui-grid__label">{{bookType.type}}</p>
+            </a>
+        </div>
+    </div>
+
+</div>
+<div class="weui-form-preview book_type_panel">
+    <div class="weui-form-preview-hd">
+        <label class="weui-form-preview-label">为你推荐</label>
+        <span class="weui-form-preview-value"></span>
+    </div>
+    <div class="weui-form-preview-bd">
+        <div class="weui_grids grids-small"  >
+            <a href="moretypebook.html" class="grid"
+               ng-repeat="bookType in bookTypes">
+                <div class="weui-grid__icon">
+                    <img ng-src="{{bookType.img}}"/>
+                </div>
+                <p class="weui-grid__label">{{bookType.type}}</p>
+            </a>
+            <a href="moretypebook.html" class="grid"
+               ng-repeat="bookType in bookTypes">
+                <div class="weui-grid__icon">
+                    <img ng-src="{{bookType.img}}"/>
+                </div>
+                <p class="weui-grid__label">{{bookType.type}}</p>
+            </a>
+        </div>
+    </div>
+
+</div>
+<div class="weui-form-preview book_type_panel">
+    <div class="weui-form-preview-hd">
+        <label class="weui-form-preview-label">现代类型</label>
+        <span class="weui-form-preview-value"></span>
+    </div>
+    <div class="weui-form-preview-bd">
+        <div class="weui_grids grids-small"  >
+            <a href="moretypebook.html" class="grid"
+               ng-repeat="bookType in bookTypes">
+                <div class="weui-grid__icon">
+                    <img ng-src="{{bookType.img}}"/>
+                </div>
+                <p class="weui-grid__label">{{bookType.type}}</p>
+            </a>
+        </div>
+    </div>
+
+</div>
+<div class="weui-form-preview book_type_panel">
+    <div class="weui-form-preview-hd">
+        <label class="weui-form-preview-label">经典类型</label>
+        <span class="weui-form-preview-value"></span>
+    </div>
+    <div class="weui-form-preview-bd">
+        <div class="weui_grids grids-small"  >
+            <a href="moretypebook.html" class="grid"
+               ng-repeat="bookType in bookTypes">
+                <div class="weui-grid__icon">
+                    <img ng-src="{{bookType.img}}"/>
+                </div>
+                <p class="weui-grid__label">{{bookType.type}}</p>
+            </a>
+        </div>
+    </div>
+
+</div>
+<!--end-->
+
+
+
+<!--footer-->
+<div class="weui-footer">
+    <p class="weui-footer__links">
+        <a href="#main" class="weui-footer__link">@书掌柜</a>
+    </p>
+    <p class="weui-footer__text">Copyright ©
+        2017-2020 Alien</p>
+</div>
+<!--end-->
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="container">
+    <div ui-view="topbar"></div>
+    <div ui-view="main"></div>
+
+    <!--backtop-->
+
+    <div class="back_top">
+        <img src="../../static/img/back_top.png"/>
+    </div>
+    <script>
+        /*返回顶部*/
+        $(function () {
+            $(window).scroll(function(){
+                if($(window).scrollTop()>0){
+                    $('.back_top').stop().fadeIn(500);
+                }else{
+                    $('.back_top').stop().fadeOut(100);
+                }
+            })
+            $('.back_top').unbind('click').click(function(){
+                $('html,body').animate({
+                    scrollTop:0
+                },1000);
+            })
+        })
+
+    </script>
+
+</div>
